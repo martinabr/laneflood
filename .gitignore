@@ -1,0 +1,17 @@
+apps/glossy-test/symbols.c
+apps/glossy-test/symbols.h
+.project
+project
+.cproject
+.settings
+*.dis
+*.o
+*.lst
+CodeAssistancePathMapper.properties
+configurations.xml
+cooja_no_debug.properties
+Default-build.log
+Default-exec.log
+launcher.properties
+private.xml
+project.xml

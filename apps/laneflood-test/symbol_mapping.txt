@@ -1,0 +1,42 @@
+data id's sent from client to server		ca
+data id's sent from server to client		cc
+data id's received by client from server	cb
+data id's received by server from client	cd
+retransmitted received client				cm
+retransmitted received server				cn
+client sent to ip							ce
+client received ip from						cf
+#data sent by server						cg
+#data received by server					ch
+#data sent by client						ci
+#data received by client					cj
+#data queue client							ck
+#data queue server							cl
+
+--------------------------------------
+bad_crc:						bc
+bad_header:						bh
+bad_length:						bl
+dest:							de
+dist:							di
+forwarder:						fo
+header:							he
+high_T_irq:						ir
+seq_no							no
+average latency (in ms):		pa
+packet latency:					pl
+packets missed:					pm
+packets total:					pt
+average reliability (in %):		py
+average radio-on time (in ms):	ra
+relay_cnt:						re
+rounds:							ro
+rx_timeout:						rt
+RX:								rx
+state:							sa
+sender:							se
+skew (in ppm):					sk
+slack:							sl
+src:							sr
+status:							st
+TX:								tx
