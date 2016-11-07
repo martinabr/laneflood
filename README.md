@@ -6,8 +6,8 @@ To learn more about LaneFlood, check out our IEEE LCN'16 paper.
 In case of questions, please contact me at *martina[dot]brachmann[at]tu-dresden[dot]de*
 
 ## Code Layout
-*
-Disclaimer: Although we tested the code extensively, LaneFlood is a research prototypes that likely contains bugs. We take no responsibility for and give no warranties in respect of using the code.*
+
+*Disclaimer: Although we tested the code extensively, LaneFlood is a research prototypes that likely contains bugs. We take no responsibility for and give no warranties in respect of using the code.*
 
 The test application for UDP can be found here:
 
