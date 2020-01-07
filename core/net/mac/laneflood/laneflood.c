@@ -1102,7 +1102,6 @@ char fs_scheduler(struct rtimer *t, void *ptr) {
         }
 
         while (RTIMER32_CLOCK_LT(RTIMER32_NOW() + GLOSSY_PERIOD + FS_SESSION_GUARD, fs_t_stop)) {
-            //leds_on(LEDS_RED);
             delay = RTIMER32_NOW();
             static struct pt fs_child_pt;
             if (RTIMER32_CLOCK_LT(RTIMER32_NOW() + FS_SESSION_GUARD + (2 * GLOSSY_PERIOD), fs_t_stop)) {

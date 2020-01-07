@@ -72,7 +72,7 @@ tcpip_handler()
 	if (seq_id_client < app_data->seq_id_client) {
 		packets_received++;
 		seq_id_client = app_data->seq_id_client;
-		printf("cg%uch%ucl%u\n", packets_sent, packets_received, packetqueue_len(&rx_queue));
+		printf("cg%uch%ucl%u\n", packets_sent, packets_received, packetqueue_len(&tx_queue));
 
 		app_data = (data_struct *) &outputbuf[0];
 		sprintf(&app_data->data[0], "sssssssssssssssssssssssssssssssssssssssssssss");

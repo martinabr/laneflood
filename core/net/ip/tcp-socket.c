@@ -353,6 +353,8 @@ tcp_socket_send(struct tcp_socket *s,
 		s->output_senddata_len = s->output_data_len;
 	}
 
+	tcpip_poll_tcp(s->c);
+
 	return len;
 }
 /*---------------------------------------------------------------------------*/
@@ -393,5 +395,11 @@ int
 tcp_socket_max_sendlen(struct tcp_socket *s)
 {
 	return s->output_data_maxlen - s->output_data_len;
+}
+/*---------------------------------------------------------------------------*/
+int
+tcp_socket_queuelen(struct tcp_socket *s)
+{
+  return s->output_data_len;
 }
 /*---------------------------------------------------------------------------*/

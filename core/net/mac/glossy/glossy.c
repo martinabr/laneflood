@@ -217,7 +217,7 @@ timerb1_interrupt(void) {
                                 // set the packet length field to the appropriate value
                                 fs_header_glossy->fs_len_field = packet_len_tmp;
                                 // Increase the relay counter
-                                fs_header_glossy->fs_relay_cnt_field = (3 << 6) | (n_timeouts * GLOSSY_INITIATOR_TIMEOUT);
+				fs_header_glossy->fs_relay_cnt_field = (3 << 6) | (n_timeouts * GLOSSY_INITIATOR_TIMEOUT);
                                 // copy the application data to the data field
                                 memcpy(&fs_header_glossy->fs_payload, data, (uint8_t) * data_len);
                                 // set Glossy state

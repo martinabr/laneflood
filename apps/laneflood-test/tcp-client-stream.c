@@ -82,7 +82,7 @@ tcpip_handler()
 		if (seq_id_server_expected < app_data->seq_id_server) {
 			seq_id_server_expected = app_data->seq_id_server;
 		}
-		printf("ci%ucj%uck%u\n", packets_sent, packets_received, packetqueue_len(&rx_queue));
+		printf("ci%ucj%uck%u\n", packets_sent, packets_received, packetqueue_len(&tx_queue));
 	} else {
 		printf("cm\n");
 		seq_id_server_expected--;
@@ -129,7 +129,7 @@ timeout_handler(void)
 	printf("ca(%u.%u)", app_data->seq_id_client, app_data->seq_id_server);
 	packets_sent++;
 	tcp_socket_send(&socket, outputbuf, (sizeof(app_data->seq_id_client) * 2)  + strlen(app_data->data));
-	printf("ck%u\n", packetqueue_len(&rx_queue));
+	printf("ck%u\n", packetqueue_len(&tx_queue));
 }
 /*---------------------------------------------------------------------------*/
 static void
@@ -162,7 +162,8 @@ PROCESS_THREAD(tcp_client_process, ev, data)
 
 	print_local_addresses();
 
-	uip_ip6addr(&ipaddr, server_addr1, server_addr2, server_addr3, server_addr4, server_addr5, server_addr6, server_addr7, server_addr8);
+	uip_ip6addr(&ipaddr, server_addr[0][0], server_addr[0][1],
+		server_addr[0][2], server_addr[0][3], server_addr[0][4], server_addr[0][5], server_addr[0][6], server_addr[0][7]);
 
 	etimer_set(&et, CLOCK_SECOND * 60);
 	PROCESS_WAIT_EVENT_UNTIL(etimer_expired(&et));
